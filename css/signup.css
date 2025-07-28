@@ -1,0 +1,15 @@
+/* css/signup.css */
+
+.container.client-module-container {
+    max-width: 800px;
+    width: 90%;
+    background-color: #708090;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    box-sizing: border-box;
+    color: white;
+}
+/* No hay estilos en el style.css original que fueran exclusivos de signup.html
+   y que no estuvieran ya cubiertos por common.css o por los estilos
+   compartidos con cliente.html. Si los hubiera, irían aquí. */
