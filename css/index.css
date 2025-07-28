@@ -1,0 +1,120 @@
+/* css/index.css */
+
+.container.login-container {
+    max-width: 600px;
+    width: 90%;
+    background-color: #708090;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+
+.login-container .header {
+    margin-bottom: 30px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.login-container .header-left {
+    align-items: center;
+}
+
+.login-container .header-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.login-container h1 {
+    font-size: 2em;
+    color: white;
+    margin-top: 0;
+}
+
+.content-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.form-row.login-form-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #506070;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-user-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.login-input-group {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-container .form-group {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #E0E0E0;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #405060;
+    border-radius: 5px;
+    background-color: #3A4750;
+    color: white;
+    font-size: 1em;
+}
+
+.login-container input::placeholder {
+    color: #BBB;
+}
+
+/* Media Queries para index.css */
+@media (max-width: 768px) {
+    .login-container .header h1 {
+        font-size: 1.5em;
+    }
+
+    .form-row.login-form-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .login-user-icon {
+        margin-bottom: 15px;
+    }
+
+    .login-input-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container .header h1 {
+        font-size: 1.2em;
+    }
+}
