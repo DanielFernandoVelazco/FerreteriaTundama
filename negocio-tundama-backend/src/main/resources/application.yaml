@@ -1,3 +1,84 @@
+# =============================================
+# CONFIGURACIÓN DEL SERVIDOR
+# =============================================
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+
+# =============================================
+# CONFIGURACIÓN DE SPRING
+# =============================================
 spring:
   application:
     name: negocio-tundama-backend
+  
+  # =============================================
+  # CONFIGURACIÓN DE LA BASE DE DATOS POSTGRESQL
+  # =============================================
+  datasource:
+    url: jdbc:postgresql://localhost:5432/negocio_tundama_db
+    username: fernandovelazco
+    password: Colombia.123  # CAMBIA ESTO por tu contraseña real
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  
+  # =============================================
+  # CONFIGURACIÓN DE JPA/HIBERNATE
+  # =============================================
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+    hibernate:
+      ddl-auto: update  # create, update, validate, none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  
+  # =============================================
+  # CONFIGURACIÓN DE SPRING SECURITY (temporal)
+  # =============================================
+  security:
+    enabled: false  # Deshabilitado para desarrollo inicial
+
+# =============================================
+# CONFIGURACIÓN DE LOGGING
+# =============================================
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    com.tundama: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/negocio-tundama.log
+    max-size: 10MB
+    max-history: 7
+
+# =============================================
+# CONFIGURACIÓN DE ACTUATOR (monitoreo)
+# =============================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
