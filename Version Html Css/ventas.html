@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Ventas</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/ventas.css">
+</head>
+<body>
+    <div class="container sales-purchases-module-container">
+        <div class="header">
+            <div class="header-left">
+                <img src="img/logo.png" alt="Logo" class="header-logo">
+                <h1>MODULO VENTAS</h1>
+            </div>
+            <div class="header-right">
+                <img src="img/sales_icon.png" alt="Icono de Ventas" class="header-icon"> <span class="version">VERSION 1.0</span>
+                <a href="menu.html" class="button button-regresar">REGRESAR</a>
+            </div>
+        </div>
+
+        <div class="form-area">
+            <div class="form-group">
+                <label for="id_venta">ID_V</label>
+                <input type="text" id="id_venta" name="id_venta" value="NTV-2023-ABR-0074" readonly class="read-only-input small-input">
+                <span class="info-text">(Código Ventas)</span>
+            </div>
+
+            <div class="sales-purchases-layout">
+                <div class="form-group">
+                    <label for="fecha_venta">FECHA</label>
+                    <input type="date" id="fecha_venta" name="fecha_venta">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_cliente_venta">ID CLIENTE</label>
+                    <input type="text" id="id_cliente_venta" name="id_cliente_venta" class="medium-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_producto_venta">ID PRODUCTO</label>
+                    <input type="text" id="id_producto_venta" name="id_producto_venta" class="medium-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad_venta">CANTIDAD</label>
+                    <input type="number" id="cantidad_venta" name="cantidad_venta" value="1" min="1" class="small-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="precio_unitario_venta">P.UNITARIO</label>
+                    <input type="text" id="precio_unitario_venta" name="precio_unitario_venta" value="$0.0" readonly class="read-only-input medium-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="iva_venta">IVA</label>
+                    <input type="text" id="iva_venta" name="iva_venta" value="19%" readonly class="read-only-input small-input">
+                </div>
+
+                <button class="button primary add-item-button">AÑADIR</button>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CÓDIGO</th>
+                            <th>NOMBRE PRODUCTO</th>
+                            <th>IVA</th>
+                            <th>UNIDAD MEDIDA</th>
+                            <th>PRECIO UNITARIO</th>
+                            <th>CANTIDAD</th>
+                            <th>TOTAL</th>
+                            <th>ACCIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Teclado Gaming</td>
+                            <td>19%</td>
+                            <td>Und</td>
+                            <td>$75.000</td>
+                            <td>2</td>
+                            <td>$150.000</td>
+                            <td><button class="button danger">ELIMINAR</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mouse Ergonómico</td>
+                            <td>19%</td>
+                            <td>Und</td>
+                            <td>$30.000</td>
+                            <td>1</td>
+                            <td>$30.000</td>
+                            <td><button class="button danger">ELIMINAR</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="price-iva-total">
+                <span>PRECIO: <input type="text" value="$180.000" readonly class="read-only-total-input"></span>
+                <span>IVA: <input type="text" value="$34.200" readonly class="read-only-total-input"></span>
+                <span class="total-amount">TOTAL: <input type="text" value="$214.200" readonly class="read-only-total-input"></span>
+            </div>
+
+            <div class="bottom-actions-row">
+                <div class="button-group">
+                    <button class="button primary">VENDER</button>
+                    <button class="button secondary">MODIFICAR</button>
+                    <button class="button danger">ELIMINAR</button>
+                    <button class="button">NUEVA VENTA</button>
+                </div>
+                <div class="totals-summary">
+                    <div>SUB TOTAL <span>$ <input type="text" value="180.000" readonly class="read-only-total-input"></span></div>
+                    <div>IVA <span>$ <input type="text" value="34.200" readonly class="read-only-total-input"></span></div>
+                    <div class="total-amount">TOTAL <span>$ <input type="text" value="214.200" readonly class="read-only-total-input"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

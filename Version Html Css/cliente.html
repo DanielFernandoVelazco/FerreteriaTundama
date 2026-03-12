@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Cliente</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/cliente.css">
+</head>
+<body>
+    <div class="container client-module-container"> 
+        <div class="header">
+            <div class="header-left">
+                <img src="img/logo.png" alt="Logo" class="header-logo">
+                <h1>MODULO CLIENTE</h1>
+            </div>
+            <div class="header-right">
+                <img src="img/customer_icon.png" alt="Icono de Cliente" class="header-icon"> <span class="version">VERSION 1.0</span>
+                <a href="menu.html" class="button button-regresar">REGRESAR</a>
+            </div>
+        </div>
+
+        <div class="form-area">
+            <div class="form-group">
+                <label for="id_cliente">ID_C</label>
+                <input type="text" id="id_cliente" name="id_cliente" value="NTC-2023-ABR-0052" readonly class="read-only-input small-input">
+                <span class="info-text">(Código Cliente)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">NOMBRE</label>
+                <input type="text" id="nombre" name="nombre" class="full-width-input">
+            </div>
+
+            <div class="form-group type-selector">
+                <label for="identificacion"># IDENTIFICACIÓN</label>
+                <input type="text" id="identificacion" name="identificacion" class="medium-input">
+                <div class="radio-group">
+    <div class="radio-option">
+        <input type="radio" id="nit" name="tipo_identificacion" value="NIT" checked>
+        <label for="nit">NIT</label>
+    </div>
+    <div class="radio-option">
+        <input type="radio" id="cedula" name="tipo_identificacion" value="CEDULA">
+        <label for="cedula">CÉDULA</label>
+    </div>
+</div>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion">DIRECCIÓN</label>
+                <input type="text" id="direccion" name="direccion" class="full-width-input">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">TELÉFONO</label>
+                <input type="text" id="telefono" name="telefono" class="medium-input">
+            </div>
+
+            <div class="form-group full-width-textarea">
+                <label for="notas">NOTAS</label>
+                <textarea id="notas" name="notas"></textarea>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="button primary">REGISTRAR</button>
+            <button type="button" class="button secondary">MODIFICAR</button>
+            <button type="button" class="button danger">ELIMINAR</button>
+            <button type="reset" class="button">LIMPIAR</button>
+        </div>
+
+        <div class="data-table-container table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID_CLIENTE</th>
+                        <th>NOMBRE</th>
+                        <th>IDENTIFICACIÓN</th>
+                        <th>DIRECCIÓN</th>
+                        <th>TELÉFONO</th>
+                        <th>NOTAS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NTC-2023-ABR-0001</td>
+                        <td>Juan Pérez</td>
+                        <td>123456789</td>
+                        <td>Calle Falsa 123</td>
+                        <td>3101234567</td>
+                        <td>Cliente frecuente</td>
+                    </tr>
+                    <tr>
+                        <td>NTC-2023-ABR-0002</td>
+                        <td>María Gómez</td>
+                        <td>987654321</td>
+                        <td>Av. Siempreviva 456</td>
+                        <td>3209876543</td>
+                        <td>Nuevo cliente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer-info">
+            <p>NEGOCIO TUNDAMA LTDA</p>
+            <p>TODOS LOS DERECHOS RESERVADOS</p>
+        </div>
+    </div>
+</body>
+</html>

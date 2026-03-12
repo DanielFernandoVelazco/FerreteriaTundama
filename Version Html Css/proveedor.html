@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Proveedor</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/proveedor.css">
+</head>
+<body>
+    <div class="container sales-purchases-module-container">
+        <div class="header">
+            <div class="header-left">
+                <img src="img/logo.png" alt="Logo" class="header-logo">
+                <h1>MODULO PROVEEDOR</h1>
+            </div>
+            <div class="header-right">
+                <img src="img/delivery_icon.png" alt="Icono de Proveedor" class="header-icon">
+                <span class="version">VERSION 1.0</span>
+                <a href="menu.html" class="button button-regresar">REGRESAR</a>
+            </div>
+        </div>
+
+        <div class="form-area">
+            <div class="form-group">
+                <label for="id_proveedor">ID_P</label>
+                <input type="text" id="id_proveedor" name="id_proveedor" value="NTP-2023-ABR-0052" readonly class="read-only-input small-input">
+                <span class="info-text">(Código Proveedor)</span>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre_empresa">NOMBRE EMPRESA</label>
+                <input type="text" id="nombre_empresa" name="nombre_empresa" class="full-width-input">
+            </div>
+
+            <div class="form-group type-selector">
+                <label for="nit_identificacion"># IDENTIFICACIÓN</label>
+                <input type="text" id="nit_identificacion" name="nit_identificacion" class="medium-input">
+                <div class="radio-group">
+                    <input type="radio" id="nit_radio" name="tipo_identificacion" value="nit" checked>
+                    <label for="nit_radio">NIT</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion_prov">DIRECCIÓN</label>
+                <input type="text" id="direccion_prov" name="direccion_prov" class="full-width-input">
+            </div>
+
+            <div class="form-group">
+                <label for="telefono_prov">TELÉFONO</label>
+                <input type="text" id="telefono_prov" name="telefono_prov" class="medium-input">
+            </div>
+
+            <div class="form-group full-width-textarea">
+                <label for="notas_prov">NOTAS</label>
+                <textarea id="notas_prov" name="notas_prov"></textarea>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="button primary">REGISTRAR</button>
+            <button class="button secondary">MODIFICAR</button>
+            <button class="button danger">ELIMINAR</button>
+            <button type="reset" class="button">LIMPIAR</button>
+        </div>
+
+        <div class="data-table-container table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID_PROVEEDOR</th>
+                        <th>NOMBRE EMPRESA</th>
+                        <th>IDENTIFICACIÓN</th>
+                        <th>DIRECCIÓN</th>
+                        <th>TELÉFONO</th>
+                        <th>NOTAS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NTP-2023-ABR-0001</td>
+                        <td>Proveedor ABC S.A.</td>
+                        <td>900123456-7</td>
+                        <td>Calle 10 # 20-30</td>
+                        <td>6011234567</td>
+                        <td>Buen servicio, entrega rápida.</td>
+                    </tr>
+                    <tr>
+                        <td>NTP-2023-ABR-0002</td>
+                        <td>Distribuidora XYZ Ltda.</td>
+                        <td>800987654-3</td>
+                        <td>Carrera 5 # 100-10</td>
+                        <td>6017654321</td>
+                        <td>Principal proveedor de insumos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer-info">
+            <p>NEGOCIO TUNDAMA LTDA</p>
+            <p>VERSION 1.0</p>
+        </div>
+    </div>
+</body>
+</html>
