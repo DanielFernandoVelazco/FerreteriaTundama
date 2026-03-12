@@ -1,4 +1,4 @@
-package com.tundama.negocio_tundama_backend;
+package com.tundama.negociotundamabackend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
