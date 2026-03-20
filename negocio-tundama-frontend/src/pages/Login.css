@@ -1,0 +1,13 @@
+.login-help {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #4A5760;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #E0E0E0;
+}
+
+.login-help p {
+  margin: 5px 0;
+}
