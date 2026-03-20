@@ -13,6 +13,8 @@ import Ventas from './pages/Ventas';
 import Compras from './pages/Compras';
 
 function App() {
+  console.log('App.jsx - Renderizando aplicación');
+
   return (
     <AuthProvider>
       <Router>
@@ -22,15 +24,15 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            
-            {/* Rutas privadas (requieren autenticación) */}
+
+            {/* Rutas privadas */}
             <Route path="/menu" element={<Menu />} />
             <Route path="/clientes" element={<Cliente />} />
             <Route path="/proveedores" element={<Proveedor />} />
             <Route path="/productos" element={<Producto />} />
             <Route path="/ventas" element={<Ventas />} />
             <Route path="/compras" element={<Compras />} />
-            
+
             {/* Ruta por defecto */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
