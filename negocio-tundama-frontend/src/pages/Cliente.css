@@ -1,0 +1,149 @@
+.cliente-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.cliente-box {
+  background-color: #708090;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1200px;
+  color: white;
+}
+
+.cliente-box h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.cliente-form {
+  background-color: #607080;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #E0E0E0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #506070;
+  border-radius: 5px;
+  background-color: #4A5760;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.button-small {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.button-edit {
+  background-color: #FFC107;
+  color: #333;
+}
+
+.button-delete {
+  background-color: #DC3545;
+  color: white;
+}
+
+.clientes-table {
+  margin-top: 30px;
+}
+
+.clientes-table h2 {
+  margin-bottom: 15px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #506070;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #405060;
+}
+
+table th {
+  background-color: #3A4750;
+  font-weight: bold;
+  color: #E0E0E0;
+}
+
+table tbody tr:hover {
+  background-color: #607080;
+}
+
+@media (max-width: 768px) {
+  .cliente-box {
+    padding: 15px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  table th,
+  table td {
+    padding: 8px 10px;
+  }
+}
