@@ -1,7 +1,7 @@
 .ventas-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 80vh;
   width: 100%;
   padding: 20px;
@@ -9,19 +9,168 @@
 
 .ventas-box {
   background-color: #708090;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  width: 100%;
+  max-width: 1400px;
   color: white;
 }
 
 .ventas-box h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.ventas-header {
   margin-bottom: 20px;
 }
 
-.coming-soon {
-  font-size: 1.5rem;
-  margin: 30px 0;
-  color: #FFC107;
+.ventas-form {
+  background-color: #607080;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #E0E0E0;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #506070;
+  border-radius: 5px;
+  background-color: #4A5760;
+  color: white;
+  font-size: 1rem;
+}
+
+.read-only-input {
+  background-color: #3A4750;
+  cursor: not-allowed;
+}
+
+.add-button {
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.carrito-table {
+  margin-bottom: 30px;
+}
+
+.carrito-table h2 {
+  margin-bottom: 15px;
+}
+
+.totales-section {
+  background-color: #506070;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.totales-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 1.1rem;
+}
+
+.total-final {
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-top: 2px solid #708090;
+  margin-top: 10px;
+  padding-top: 15px;
+  color: #3ABDBF;
+}
+
+.total-value {
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+
+.ventas-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.ventas-historial h2 {
+  margin-bottom: 15px;
+}
+
+.venta-anulada {
+  background-color: #5a2c30;
+  opacity: 0.7;
+}
+
+.venta-anulada td {
+  text-decoration: line-through;
+}
+
+.estado-badge {
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.estado-badge.completada {
+  background-color: #28A745;
+  color: white;
+}
+
+.estado-badge.anulada {
+  background-color: #DC3545;
+  color: white;
+}
+
+.button-warning {
+  background-color: #FFC107;
+  color: #333;
+}
+
+.button-info {
+  background-color: #17A2B8;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .ventas-box {
+    padding: 15px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ventas-actions {
+    flex-direction: column;
+  }
+
+  .totales-section {
+    max-width: 100%;
+  }
 }
