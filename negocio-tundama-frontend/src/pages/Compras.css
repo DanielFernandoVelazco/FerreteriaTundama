@@ -1,7 +1,7 @@
 .compras-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 80vh;
   width: 100%;
   padding: 20px;
@@ -9,13 +9,44 @@
 
 .compras-box {
   background-color: #708090;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  width: 100%;
+  max-width: 1400px;
   color: white;
 }
 
 .compras-box h1 {
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.compras-form {
+  background-color: #607080;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.compras-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.compra-anulada {
+  background-color: #5a2c30;
+  opacity: 0.7;
+}
+
+.compra-anulada td {
+  text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+  .compras-actions {
+    flex-direction: column;
+  }
 }
