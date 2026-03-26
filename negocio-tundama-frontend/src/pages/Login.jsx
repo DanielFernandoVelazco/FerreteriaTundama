@@ -5,13 +5,12 @@ import './Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login, error } = useAuth();
+  const { login } = useAuth();
   const [formData, setFormData] = useState({
     email: '',
     contrasena: ''
   });
   const [loading, setLoading] = useState(false);
-  const [localError, setLocalError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -22,21 +21,40 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.email.trim()) {
+      alert('⚠️ Por favor ingrese su usuario');
+      return;
+    }
+
+    if (!formData.contrasena.trim()) {
+      alert('⚠️ Por favor ingrese su contraseña');
+      return;
+    }
+
     setLoading(true);
-    setLocalError('');
 
     try {
       const result = await login(formData.email, formData.contrasena);
 
       if (result.success) {
+        // Login exitoso
         navigate('/menu');
       } else {
-        setLocalError(result.message || 'Error al iniciar sesión');
+        // Mostrar error con alert nativo
+        alert(`❌ Error de autenticación\n\n${result.message || 'Usuario o clave incorrectos.'}`);
+        setLoading(false);
       }
     } catch (err) {
-      setLocalError('Error de conexión con el servidor');
-    } finally {
+      console.error('Error en login:', err);
+      alert('❌ Error de conexión con el servidor.\n\nPor favor, verifique que el backend esté corriendo en http://localhost:8081');
       setLoading(false);
+    }
+  };
+
+  const handleCancel = () => {
+    if (window.confirm('¿Está seguro que desea cancelar el inicio de sesión?')) {
+      setFormData({ email: '', contrasena: '' });
     }
   };
 
@@ -49,13 +67,6 @@ const Login = () => {
         </div>
 
         <div className="login-content">
-          {(error || localError) && (
-            <div className="login-error">
-              <img src="/img/warning_icon.png" alt="Error" className="error-icon" />
-              <span>{error || localError}</span>
-            </div>
-          )}
-
           <div className="login-form-container">
             <div className="login-user-section">
               <img src="/img/user_icon.png" alt="Usuario" className="login-user-icon" />
@@ -70,7 +81,8 @@ const Login = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Ingrese su usuario"
-                    required
+                    autoComplete="off"
+                    disabled={loading}
                   />
                 </div>
 
@@ -83,7 +95,7 @@ const Login = () => {
                     value={formData.contrasena}
                     onChange={handleChange}
                     placeholder="******"
-                    required
+                    disabled={loading}
                   />
                 </div>
               </form>
@@ -92,12 +104,21 @@ const Login = () => {
 
           <div className="login-actions">
             <button
-              type="submit"
+              type="button"
               className="button button-primary"
               onClick={handleSubmit}
               disabled={loading}
             >
               {loading ? 'INGRESANDO...' : 'INGRESAR'}
+            </button>
+
+            <button
+              type="button"
+              className="button button-danger"
+              onClick={handleCancel}
+              disabled={loading}
+            >
+              CANCELAR
             </button>
 
             <Link to="/signup" className="button button-secondary">
