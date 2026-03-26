@@ -2,41 +2,92 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
   width: 100%;
+  padding: 20px;
+  background-color: #A0A0A0;
+  box-sizing: border-box;
 }
 
 .signup-box {
   background-color: #708090;
-  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 30px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .signup-header {
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.signup-logo {
-  width: 60px;
-  height: 60px;
   margin-bottom: 10px;
 }
 
+.signup-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
 .signup-header h1 {
-  font-size: 1.8rem;
+  font-size: 2em;
   color: white;
   margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .signup-form {
+  background-color: #607080;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #E0E0E0;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #405060;
+  border-radius: 5px;
+  background-color: #3A4750;
+  color: white;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #BBB;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3ABDBF;
+}
+
+.form-group textarea {
+  resize: vertical;
+  font-family: inherit;
 }
 
 .form-row {
@@ -45,37 +96,135 @@
   gap: 15px;
 }
 
-.form-group textarea {
-  padding: 10px;
-  border: 1px solid #506070;
-  border-radius: 5px;
-  background-color: #4A5760;
-  color: white;
-  font-size: 1rem;
-  width: 100%;
-  resize: vertical;
-}
-
 .signup-actions {
   display: flex;
   gap: 15px;
-  margin-top: 20px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
+.button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  min-width: 120px;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button-primary {
+  background-color: #3ABDBF;
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #2CA7A9;
+}
+
+.button-secondary {
+  background-color: #6C757D;
+  color: white;
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: #5A6268;
+}
+
+.button-danger {
+  background-color: #DC3545;
+  color: white;
+}
+
+.button-danger:hover:not(:disabled) {
+  background-color: #C82333;
+}
+
+.signup-footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #E0E0E0;
+  margin-top: 10px;
+}
+
+.signup-footer p {
+  margin: 5px 0;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
   .signup-box {
     padding: 20px;
   }
 
   .signup-header h1 {
-    font-size: 1.4rem;
+    font-size: 1.5em;
+  }
+
+  .signup-form {
+    padding: 20px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .signup-actions {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-box {
+    padding: 15px;
+  }
+
+  .signup-header h1 {
+    font-size: 1.2em;
+  }
+
+  .signup-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .button {
+    max-width: 200px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
 }
